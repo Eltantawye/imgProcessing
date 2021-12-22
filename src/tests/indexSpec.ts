@@ -9,13 +9,16 @@ import { rootPath } from '../routes';
 const request = supertest(app);
 describe('Test endpoint responses', () => {
   it('if end point has the right params', async (done) => {
-    const response = await request.get('/?filename=fjord&width=350&height=350');
+    const response = await request.get(
+      '/image?filename=fjord&width=350&height=350'
+    );
 
     expect(response.status).toBe(200);
     done();
   });
   it('if endpoint has wrong params', async (done) => {
-    const response = await request.get('/?filename=fjord&width=350');
+    const response = await request.get('/image?filename=fjord&width=350');
+
     expect(response.status).toBe(404);
     done();
   });

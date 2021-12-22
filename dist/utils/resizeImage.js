@@ -75,12 +75,7 @@ var resizeImage = function (imagePath, imgName, width, height) { return __awaite
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                if (!imagePath || !width || !height) {
-                    return [2 /*return*/, 'error'];
-                }
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 6, , 7]);
+                _a.trys.push([0, 5, , 6]);
                 resizedImagePath = "".concat(routes_1.rootPath, "/thumbnails/").concat(imgName, "_").concat(width, "_").concat(height, ".jpg");
                 // if path of resized image is founded with same
                 if (fs_1.default.existsSync(resizedImagePath)) {
@@ -90,22 +85,22 @@ var resizeImage = function (imagePath, imgName, width, height) { return __awaite
                         width: width,
                         height: height,
                     })];
-            case 2:
+            case 1:
                 resizedImage = _a.sent();
-                if (!!fs_1.default.existsSync("".concat(routes_1.rootPath, "/thumbnails"))) return [3 /*break*/, 4];
+                if (!!fs_1.default.existsSync("".concat(routes_1.rootPath, "/thumbnails"))) return [3 /*break*/, 3];
                 return [4 /*yield*/, fs_1.promises.mkdir("".concat(routes_1.rootPath, "/thumbnails"))];
-            case 3:
+            case 2:
                 _a.sent();
-                _a.label = 4;
-            case 4: return [4 /*yield*/, resizedImage.toFile(resizedImagePath)];
-            case 5:
+                _a.label = 3;
+            case 3: return [4 /*yield*/, resizedImage.toFile(resizedImagePath)];
+            case 4:
                 _a.sent();
                 return [2 /*return*/, 'created'];
-            case 6:
+            case 5:
                 error_1 = _a.sent();
                 console.log(error_1);
                 return [2 /*return*/, 'error'];
-            case 7: return [2 /*return*/];
+            case 6: return [2 /*return*/];
         }
     });
 }); };

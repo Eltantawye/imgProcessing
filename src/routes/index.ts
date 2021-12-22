@@ -12,12 +12,6 @@ routes.get('/', async (req, res) => {
   const width = parseInt(req.query.width as string);
   const height = parseInt(req.query.height as string);
 
-  if (!filename || !width || !height) {
-    res.status(404).send('Image is not found');
-
-    return;
-  }
-
   // if there is no errors the resized image will be sent
   try {
     const imagePath = path.resolve(`images/${req.query.filename}.jpg`);

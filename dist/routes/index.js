@@ -54,10 +54,6 @@ routes.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
                 filename = req.query.filename;
                 width = parseInt(req.query.width);
                 height = parseInt(req.query.height);
-                if (!filename || !width || !height) {
-                    res.status(404).send('Image is not found');
-                    return [2 /*return*/];
-                }
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 4, , 5]);

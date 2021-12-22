@@ -18,9 +18,6 @@ export const resizeImage = async (
   width: number,
   height: number
 ): Promise<resizeReturn> => {
-  if (!imagePath || !width || !height) {
-    return 'error';
-  }
   try {
     const resizedImagePath = `${rootPath}/thumbnails/${imgName}_${width}_${height}.jpg`;
 
