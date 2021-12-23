@@ -4,7 +4,7 @@ export const loggerMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): void => {
   const {
     query: { filename, height, width },
   } = req;

@@ -4,7 +4,7 @@ export const validatorMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): void => {
   const {
     query: { filename, height, width },
   } = req;
@@ -15,7 +15,7 @@ export const validatorMiddleware = (
       .send(
         'Image is not found please provide valid url ex: http://localhost:3000/image?filename=fjord&width=350&height=350'
       );
-    return;
+  } else {
+    next();
   }
-  next();
 };
